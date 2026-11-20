@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ロト7数字セレクター Ver.1 | NUMBER &amp; SPORTS LAB</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="loto7-history.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap brand"><span class="mark" aria-hidden="true"></span>NUMBER &amp; SPORTS LAB</div>
+  </header>
+  <main class="wrap">
+    <div class="intro">
+      <h1>ロト7数字セレクター <span>Ver.1</span></h1>
+      <p>1〜37から7個を選ぶと、過去の本数字と自動で照合します。</p>
+      <p id="history-status" class="history-status"></p>
+    </div>
+    <div class="layout">
+      <section class="panel picker" aria-labelledby="picker-title">
+        <div class="panel-heading">
+          <div>
+            <h2 id="picker-title">数字を選ぶ</h2>
+            <p>選んだ数字をもう一度押すと解除できます。</p>
+          </div>
+          <output id="count" aria-live="polite" aria-label="選択数">0 / 7</output>
+        </div>
+        <div id="numbers" class="numbers" role="group" aria-label="1から37の数字"></div>
+        <button id="reset" class="secondary" type="button" disabled>選択をリセット</button>
+      </section>
+      <div class="side">
+        <section class="panel" aria-labelledby="selection-title">
+          <h2 id="selection-title">選択した数字</h2>
+          <ol id="selected" class="selected" aria-label="選択した数字の昇順表示"></ol>
+          <dl class="stats">
+            <div><dt>奇数 / 偶数</dt><dd id="parity">0 / 0</dd></div>
+            <div><dt>小 / 大</dt><dd id="size">0 / 0</dd><small>1〜18 / 19〜37</small></div>
+            <div><dt>合計</dt><dd id="sum">0</dd></div>
+          </dl>
+        </section>
+        <section class="panel result" aria-labelledby="result-title">
+          <h2 id="result-title">本数字7個の完全一致</h2>
+          <div id="result" role="status"></div>
+        </section>
+      </div>
+    </div>
+    <noscript><p>数字の選択と履歴照合にはJavaScriptを有効にしてください。</p></noscript>
+    <footer>
+      <p>過去の一致の有無は将来の当選確率に影響しません。</p>
+      <p>照合はブラウザー内で行います。個人情報の収集や選択した数字の外部送信はありません。</p>
+    </footer>
+  </main>
+</body>
+</html>
